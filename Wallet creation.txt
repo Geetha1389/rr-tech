@@ -1,0 +1,55 @@
+To write a shell script that executes the command `alter system set wallet_root='/u01/app/oracle/admin/oratsc01/wallet' scope=spfile sid='*';`, you can create a simple script using any text editor. Here's how you can do it:
+
+1. **Create a new file**: Use a text editor like `nano`, `vi`, or `gedit` to create a new file. Let's name it `set_wallet.sh`.
+
+   ```bash
+   nano set_wallet.sh
+   ```
+
+2. **Write the script**: In the editor, write the following script:
+
+   ```bash
+   #!/bin/bash
+   
+   # Script to set Oracle wallet root
+   
+   # Variables
+   WALLET_ROOT="/u01/app/oracle/admin/oratsc01/wallet"
+   SID="*"
+   
+   # SQL command
+   SQL_COMMAND="alter system set wallet_root='$WALLET_ROOT' scope=spfile sid='$SID';"
+   
+   # Execute SQL command as sysdba using SQL*Plus
+   sqlplus / as sysdba <<EOF
+   $SQL_COMMAND
+   exit;
+   EOF
+   ```
+
+   **Explanation**:
+   - `#!/bin/bash`: This line specifies that the script should be interpreted using Bash.
+   - `WALLET_ROOT` and `SID` are variables holding the values for `wallet_root` and `sid` in your SQL command.
+   - `SQL_COMMAND` constructs the SQL command string.
+   - `sqlplus / as sysdba <<EOF`: This starts a here document to send commands to `sqlplus` as the `sysdba` user.
+   - `$SQL_COMMAND`: This inserts the SQL command into the here document.
+   - `exit;`: Ends the `sqlplus` session.
+   - `EOF`: Indicates the end of the here document.
+
+3. **Save and exit**: Save the file (`Ctrl + O` in nano, `:wq` in vi) and exit the text editor.
+
+4. **Make the script executable**: Before running the script, make sure it is executable.
+
+   ```bash
+   chmod +x set_wallet.sh
+   ```
+
+5. **Run the script**: Execute the script to set the Oracle wallet root.
+
+   ```bash
+   ./set_wallet.sh
+   ```
+
+   This will execute the SQL command using `sqlplus` as the `sysdba`, setting the wallet root as specified.
+
+Remember to adjust the `WALLET_ROOT` variable in the script to match the actual path where your Oracle wallet resides, and ensure that `sqlplus` is accessible and configured correctly on your system for the `sysdba` user. Adjust permissions and security as necessary for your environment.
