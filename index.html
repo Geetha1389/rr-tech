@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AWS & DevOps Components - RR Technosoft</title>
+  <style>
+    :root{--watermark-color: rgba(0,128,0,0.10);} /* green watermark */
+    body{
+      font-family: Arial, sans-serif;
+      margin:0;
+      min-height:100vh;
+      position:relative;
+      background:#fff;
+      color:#333;
+    }
+    /* Watermark */
+    .watermark{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%) rotate(-25deg);
+      font-size:6rem;
+      color: green; /* explicitly green */
+      opacity:0.08;
+      white-space:nowrap;
+      pointer-events:none;
+      z-index:0;
+    }
+    header{
+      background:#f9f9f9;
+      padding:30px 20px;
+      text-align:center;
+      position:relative;
+      z-index:2;
+    }
+    header h1{
+      color:red; /* red and bold */
+      font-weight:bold;
+      margin:0;
+      font-size:2rem;
+    }
+    main{
+      padding:20px;
+      z-index:2;
+      position:relative;
+    }
+    .grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:center;
+    }
+    .card{
+      background:#fff;
+      border:1px solid #eee;
+      padding:16px;
+      width:320px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.03);
+    }
+    .card h2{margin-top:0;color:#222}
+    footer{
+      text-align:center;
+      padding:16px;
+      position:fixed;
+      bottom:0;
+      left:0;
+      right:0;
+      background:rgba(255,255,255,0.95);
+      z-index:2;
+      border-top:1px solid #eee;
+      font-weight:600;
+    }
+    @media (max-width:700px){
+      .watermark{font-size:3.5rem;opacity:0.06;}
+      .card{width:100%;}
+    }
+  </style>
+</head>
+<body>
+  <div class="watermark">RR Technosoft</div>
+  <header><h1>AWS and DevOps Components</h1></header>
+  <main>
+    <p>Below is a simple overview of common AWS and DevOps components.</p>
+    <div class="grid">
+      <section class="card">
+        <h2>AWS Components</h2>
+        <ul>
+          <li>EC2 (Compute)</li>
+          <li>S3 (Storage)</li>
+          <li>RDS / Aurora (Databases)</li>
+          <li>Lambda (Serverless)</li>
+          <li>VPC (Networking)</li>
+          <li>IAM (Identity & Access)</li>
+          <li>CloudFormation / CDK (IaC)</li>
+          <li>CloudWatch (Monitoring)</li>
+          <li>EKS / ECS (Containers)</li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>DevOps Components</h2>
+        <ul>
+          <li>Source Control: Git / GitHub / GitLab</li>
+          <li>CI/CD: Jenkins / GitHub Actions / GitLab CI</li>
+          <li>Containers: Docker</li>
+          <li>Orchestration: Kubernetes</li>
+          <li>IaC: Terraform / Ansible</li>
+          <li>Config Mgmt: Chef / Puppet / Ansible</li>
+          <li>Monitoring: Prometheus / Grafana</li>
+          <li>Artifact Repo: Nexus / Artifactory</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer>KPHB, Hyderabad</footer>
+</body>
+</html>
