@@ -1,0 +1,35 @@
+Give sudo previliges to users
+
+
+add sudo group to user 
+
+usermod -aG sudo username 
+
+Checking group membership
+
+groups username
+
+here we create the password for sudo user---
+
+sudo passwd username
+
+
+enter new password
+reenter new password
+
+edit the /etc/sudoers file
+
+vi /etc/sudoers
+
+enter the user name like root in this file username ALL=(ALL)    ALL
+
+will login as sudo username 
+
+here sudo whoami command
+
+it asked passwd then enter passwd 
+ --the result must and should come root
+then user have sudo previliges
+
+if we want without asking password we give --username ALL=(ALL)   NOPASSWD:ALL
+we entered this then it doesn't ask password
